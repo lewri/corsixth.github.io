@@ -32,6 +32,7 @@ async function renderPages() {
 	const data = {
 		releases: await getReleases(),
 		posts: await getPosts(),
+    currentYear: new Date().getUTCFullYear(),
 		formatDate: () => (date, render) => (new Date(Date.parse(render(date)))).toLocaleDateString('en-GB', { year: 'numeric', month: 'numeric', day: 'numeric' }),
 	};
 	const templates = {
